@@ -1,1 +1,26 @@
 /* Denna fil skall innehålla din CSS kod */
+
+#layout {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "nav mai fot";
+}
+
+nav {
+    grid-area: nav;
+    background-color: green;
+}
+
+main {
+    grid-area: mai;
+    background-color: white;
+}
+
+footer {
+    grid-area: fot;
+    background-color: red;
+}
