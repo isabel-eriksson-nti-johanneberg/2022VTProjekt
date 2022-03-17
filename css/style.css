@@ -7,7 +7,24 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
-    "nav mai fot";
+    "nav"
+    "mai"
+    "fot"
+
+}
+
+.popular_books {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "book1 book2 book3"
+        "book4 book5 book6"
+        "book7 book8 book9"
+}
+
+.popular_book {
+    border: 1px red solid;
 }
 
 nav {
