@@ -1,43 +1,281 @@
-/* Denna fil skall innehålla din CSS kod */
-
-#layout {
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 
-    "nav"
-    "mai"
-    "fot"
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.popular_books {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 
-        "book1 book2 book3"
-        "book4 book5 book6"
-        "book7 book8 book9"
+body {
+  font-family: "Nunito Sans", sans-serif;
 }
 
-.popular_book {
-    border: 1px red solid;
+header {
+  color: white;
+  height: 80vh;
+  width: 100vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../img/header.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+header #header_text {
+  max-width: 600px;
+  position: absolute;
+  left: 50px;
+  top: 100px;
+}
+
+header #header_text button {
+  width: 100px;
+  padding: 8px;
+  border: 0;
+  margin-top: 20px;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  margin-top: 80px;
 }
 
 nav {
-    grid-area: nav;
-    background-color: green;
+  height: 80px;
+  width: 100%;
+}
+
+nav h1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+nav h1 a {
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin: 15px;
+}
+
+nav ul a {
+  color: white;
+}
+
+#hamburger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#hamburger span {
+  width: 40px;
+  height: 4px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  background-color: white;
+  display: block;
+}
+
+.popular_books {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.book {
+  border: 1px rgb(240, 240, 240) solid;
+  background-color: rgb(245, 245, 245);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 2px 2px 7px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 7px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 7px -3px rgba(0, 0, 0, 0.75);
+  padding: 15px;
+  height: 250px;
+}
+
+.book a {
+  color: black;
+}
+
+.book .book_card_content {
+  display: flex;
+}
+
+.book img {
+  width: 30%;
+  display: block;
+  margin: auto;
+}
+
+#find_us img {
+  width: 89%;
+  border-radius: 50%;
+  margin: 50px 0;
+}
+
+#find_us #text {
+  width: 80%;
+}
+
+#why_us img {
+  width: 89%;
+  border-radius: 50%;
+  margin: 50px 0;
+}
+
+#why_us #text {
+  width: 80%;
 }
 
 main {
-    grid-area: mai;
-    background-color: white;
+  grid-area: mai;
+  background-color: white;
 }
 
 footer {
-    grid-area: fot;
-    background-color: red;
+  grid-area: fot;
+  background-color: red;
+}
+
+#book_page img {
+  width: 200px;
+}
+
+#book_page #container {
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+}
+#book_page #overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#book_page #overview h2 {
+  font-size: 32px;
+}
+
+#book_page #description {
+  margin: 20px 10px;
+  font-size: 16px;
+  color: rgb(73, 73, 73);
+}
+
+#book_page #reviews h2 {
+  font-size: 32px;
+}
+/* TODO Sätt en bild på review card  */
+#book_page #reviews #cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+#book_page #reviews .review {
+  border: 0.5px solid rgb(216, 216, 216);
+  padding: 20px;
+  -webkit-box-shadow: 2px 2px 5px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 5px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 5px -4px rgba(0, 0, 0, 0.75);
+}
+#book_page #reviews .review p {
+  margin-left: 8px;
+  margin-top: 10px;
+}
+
+#book_page #reviews .review .checked {
+  color: orange;
+}
+
+#book_page #reviews .review img {
+  width: 16%;
+  border-radius: 50px;
+  margin-right: 25px;
+}
+
+#book_page #reviews .review h3 {
+  display: flex;
+  align-items: center;
+}
+
+#about_page #facts {
+  /* display: flex; */
+  margin-top: 20px;
+}
+
+#about_page #facts img {
+  width: 80%;
+  margin-top: 40px;
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 960px) {
+  header #header_text {
+    max-width: 600px;
+    position: absolute;
+    left: 50px;
+    top: 100px;
+  }
+
+  #find_us #content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #find_us img {
+    width: 500px;
+    border-radius: 50%;
+    margin: 50px 0;
+  }
+
+  #find_us #text {
+    width: 400px;
+  }
+
+  #why_us #content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #why_us img {
+    width: 500px;
+    border-radius: 50%;
+    margin: 50px 0;
+  }
+
+  #why_us #text {
+    width: 400px;
+  }
+
+  #book_page #overview {
+    flex-direction: row;
+  }
+
+  #about_page #facts {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  #about_page #facts img {
+    width: 400px;
+    margin-top: 40px;
+  }
 }
